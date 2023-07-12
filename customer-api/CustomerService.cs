@@ -27,34 +27,22 @@ namespace customer_api.Services
             _databaseId = configuration["DatabaseID"];
             _containerId = configuration["ContainerID"];
         }
-        public async Task<string> GetCustomer()
+        public async Task<string> CreateCustomer(Customer customer)
         {
             // Create a new instance of the Cosmos Client
             this.cosmosClient = new CosmosClient(_EndpointUri, _PrimaryKey, new CosmosClientOptions() { ApplicationName = "CosmosDBDotnetQuickstart" });
             this.database = this.cosmosClient.GetDatabase(_databaseId);
             this.container = this.database.GetContainer(_containerId);
 
-            Customer customer = new Customer
-            {
-                Id = "1",
-                PartitionKey = "Jomiel",
-                FirstName = "Jomiel",
-                LastName = "Enriquez",
-                BirthdayInEpoch = "123123",
-                Email = "test@email.com"
-            };
-
             try
             {
                 ItemResponse<Customer> testing = await this.container.CreateItemAsync<Customer>(customer, new PartitionKey(customer.PartitionKey));
+                return "Successfully Saved";
             }
             catch (Exception ex)
             {
+                return ex.ToString();
             }
-
-            //var books = await _customer.FindAsync(book => true);
-            //return books.ToList();
-            return "test";
         }
     }
 }

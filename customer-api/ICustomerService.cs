@@ -12,7 +12,7 @@ namespace customer_api
         /// Get all customer info
         /// </summary>
         /// <returns></returns>
-        Task<string> GetCustomer();
+        //Task<string> InsertCustomer(Customer customer);
 
         ///// <summary>
         ///// Get a book by its id from the Books collection
@@ -26,7 +26,7 @@ namespace customer_api
         ///// </summary>
         ///// <param name="book"></param>
         ///// <returns></returns>
-        //Task CreateBook(Book bookIn);
+        Task<string> CreateCustomer(Customer customer);
 
         ///// <summary>
         ///// Updates an existing book in the Books collection

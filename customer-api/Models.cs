@@ -5,9 +5,6 @@ using System.Text;
 
 namespace customer_api.Models
 {
-    //internal class Models
-    //{
-    //}
     public class Customer
     {
         [JsonProperty(PropertyName = "id")]

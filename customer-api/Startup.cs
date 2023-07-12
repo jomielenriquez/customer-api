@@ -25,10 +25,6 @@ namespace customer_api
 
             builder.Services.AddSingleton<IConfiguration>(config);
 
-            //MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(config["ConnectionString"]));
-            //settings.SslSettings = new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
-
-            //builder.Services.AddSingleton((s) => new MongoClient(settings));
             builder.Services.AddTransient<ICustomerService, CustomerService>();
         }
     }
