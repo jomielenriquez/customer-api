@@ -36,36 +36,7 @@ Create new customer info.
     "email":"test@mail.com"
 }
 ```
-
-
-
-<div style="border: solid 3px #61affe;border-radius: 5px; height: 55px; padding:10px !important;margin-bottom: 10px;background-color: #ebf3fb;">
-    <div style="background-color: #61affe; color:white;font-size: 20px !important; border-radius: 5px; display: inline-block; width: 80px; text-align: center; height: 40px; padding-top: 15px;font-family: Arial, Helvetica, sans-serif;font-weight:600">GET</div>
-    <div
-        style="
-            display: inline-block;
-            margin-left: 10px;
-            font-size:25px;
-            font-weight:600;
-            font-family: Arial, Helvetica, sans-serif;
-            color:black;
-        ">
-        /api/GetCustomerById?id={CustomerId>}
-    </div>
-    <div
-        style="
-            display: inline-block;
-            margin-left: 20px;
-            font-size:20px;
-            font-weight: lighter;
-            font-family: Arial, Helvetica, sans-serif;
-            color:black;
-        ">
-        Get specific customer information.
-    </div>
-</div>
-
-
+![](./svg/test.svg)
 
 ### Query Params
 <table style="width:500px; border-top:solid 1px">
