@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using ServiceStack;
 using ServiceStack.Text;
+using Azure;
 
 namespace customer_api
 {
@@ -32,27 +33,32 @@ namespace customer_api
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "CreateCustomer")] HttpRequest req)
         {
-            var incomingRequest = await new StreamReader(req.Body).ReadToEndAsync();
-            var bookRequest = JsonConvert.DeserializeObject<Customer>(incomingRequest);
-
-            DateTime enteredDate = DateTime.Parse(bookRequest.BirthdayInEpoch);
-
-            DateTimeOffset dateTimeOffset = new DateTimeOffset(enteredDate);
-            long epochTimestamp = dateTimeOffset.ToUnixTimeSeconds();
-
-            //DateTimeOffset dateTimeOffset1 = DateTimeOffset.FromUnixTimeSeconds(epochTimestamp);
-            //DateTime dateTime = dateTimeOffset1.LocalDateTime;
-
-            Customer customer = new Customer
+            string response = string.Empty;
+            try
             {
-                Id = ObjectId.GenerateNewId().ToString(),
-                FirstName = bookRequest.FirstName,
-                LastName = bookRequest.LastName,
-                BirthdayInEpoch = epochTimestamp.ToString(),
-                Email = bookRequest.Email,
-            };
+                var incomingRequest = await new StreamReader(req.Body).ReadToEndAsync();
+                var bookRequest = JsonConvert.DeserializeObject<Customer>(incomingRequest);
 
-            string response = await _customerService.CreateCustomer(customer);
+                DateTime enteredDate = DateTime.Parse(bookRequest.BirthdayInEpoch);
+
+                DateTimeOffset dateTimeOffset = new DateTimeOffset(enteredDate);
+                long epochTimestamp = dateTimeOffset.ToUnixTimeSeconds();
+
+                Customer customer = new Customer
+                {
+                    Id = ObjectId.GenerateNewId().ToString(),
+                    FirstName = bookRequest.FirstName,
+                    LastName = bookRequest.LastName,
+                    BirthdayInEpoch = epochTimestamp.ToString(),
+                    Email = bookRequest.Email,
+                };
+
+                response = await _customerService.CreateCustomer(customer);
+            }
+            catch (Exception ex)
+            {
+                return new OkObjectResult(ex.Message);
+            }
 
             return new OkObjectResult(response);
         }

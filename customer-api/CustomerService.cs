@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Azure.Cosmos;
 using LinqToDB;
+using Azure;
+using ServiceStack;
 
 namespace customer_api.Services
 {
@@ -58,6 +60,11 @@ namespace customer_api.Services
                 FeedResponse<Customer> currentResultSet = await queryResultSetIterator.ReadNextAsync();
                 foreach (Customer customer in currentResultSet)
                 {
+                    DateTimeOffset dateTimeOffset1 = DateTimeOffset.FromUnixTimeSeconds(customer.BirthdayInEpoch.ToLong());
+                    DateTime dateTime = dateTimeOffset1.LocalDateTime;
+
+                    customer.BirthdayInEpoch = dateTime.Date.ToString().Split(" ")[0];
+
                     customers.Add(customer);
                 }
             }
