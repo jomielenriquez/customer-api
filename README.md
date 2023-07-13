@@ -39,29 +39,8 @@ Create new customer info.
 
 
 
-<div 
-    style="
-        border: solid 3px #61affe; 
-        border-radius: 5px; 
-        height: 55px; 
-        padding:10px !important;
-        margin-bottom: 10px;
-        background-color: #ebf3fb;
-        ">
-    <div 
-        style="
-            background-color: #61affe; 
-            color:white;
-            font-size: 20px !important; 
-            border-radius: 5px; 
-            display: inline-block; 
-            width: 80px; 
-            text-align: center; 
-            height: 40px; 
-            padding-top: 15px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight:600
-        ">GET</div>
+<div style="border: solid 3px #61affe;border-radius: 5px; height: 55px; padding:10px !important;margin-bottom: 10px;background-color: #ebf3fb;">
+    <div style="background-color: #61affe; color:white;font-size: 20px !important; border-radius: 5px; display: inline-block; width: 80px; text-align: center; height: 40px; padding-top: 15px;font-family: Arial, Helvetica, sans-serif;font-weight:600">GET</div>
     <div
         style="
             display: inline-block;
