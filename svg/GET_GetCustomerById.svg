@@ -8,18 +8,18 @@
                 style="
                     display: inline-block;
                     margin-left: 10px;
-                    font-size:25px;
+                    font-size:20px;
                     font-weight:600;
                     font-family: Arial, Helvetica, sans-serif;
                     color:black;
                 ">
-                /api/GetCustomerById?id={CustomerId>}
+                /api/GetCustomerById?id={CustomerId}
             </div>
             <div
                 style="
                     display: inline-block;
                     margin-left: 20px;
-                    font-size:20px;
+                    font-size:15px;
                     font-weight: lighter;
                     font-family: Arial, Helvetica, sans-serif;
                     color:black;

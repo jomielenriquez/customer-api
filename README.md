@@ -1,14 +1,7 @@
 # Customer Information API - Backend Challenge
 by Jomiel Enriquez
 
-## <span style="background-color: #f93e3e !important; color:white; width: 300px !important; border-radius:3px; margin-right:20px"> DELETE </span>  Remove CustomerById
-
-```url
-/api/RemoveCustomerById?id=<CustomerId>
-```
-
-Delete specific customer information using the customer id.
-
+![](./svg/DELETE_CustomerById.svg)
 ### Query Params
 <table style="width:500px; border-top:solid 1px;">
     <tr>
@@ -36,7 +29,7 @@ Create new customer info.
     "email":"test@mail.com"
 }
 ```
-![](./svg/test.svg)
+![](./svg/GET_GetCustomerById.svg)
 ### Query Params
 <table style="width:500px; border-top:solid 1px">
     <tr>
