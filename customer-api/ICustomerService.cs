@@ -12,29 +12,29 @@ namespace customer_api
         /// Get all customer info
         /// </summary>
         /// <returns></returns>
-        //Task<string> GetAllCustomer(Customer customer);
+        Task<List<Customer>> GetAllCustomer();
 
         /// <summary>
-        /// Get a book by its id from the Books collection
+        /// Get customer info by its id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         Task<Customer> GetCustomerById(string id);
 
-        ///// <summary>
-        ///// Insert a book into the Books collection
-        ///// </summary>
-        ///// <param name="book"></param>
-        ///// <returns></returns>
+        /// <summary>
+        /// Insert a new customer info
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
         Task<string> CreateCustomer(Customer customer);
 
-        ///// <summary>
-        ///// Updates an existing book in the Books collection
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <param name="book"></param>
-        ///// <returns></returns>
-        //Task UpdateBook(string id, Book bookIn);
+        /// <summary>
+        /// Updates an existing customer information by its id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="book"></param>
+        /// <returns></returns>
+        Task<string> UpdateCustomer(string id, Customer customer);
 
         ///// <summary>
         ///// Removes a book from the Books collection

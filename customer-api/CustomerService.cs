@@ -7,6 +7,7 @@ using MongoDB.Driver;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Azure.Cosmos;
+using LinqToDB;
 
 namespace customer_api.Services
 {
@@ -43,6 +44,26 @@ namespace customer_api.Services
             }
         }
 
+        public async Task<List<Customer>> GetAllCustomer()
+        {
+            var sqlQueryText = "SELECT * FROM c";
+
+            QueryDefinition queryDefinition = new QueryDefinition(sqlQueryText);
+            FeedIterator<Customer> queryResultSetIterator = this.container.GetItemQueryIterator<Customer>(queryDefinition);
+
+            List<Customer> customers = new List<Customer>();
+
+            while (queryResultSetIterator.HasMoreResults)
+            {
+                FeedResponse<Customer> currentResultSet = await queryResultSetIterator.ReadNextAsync();
+                foreach (Customer customer in currentResultSet)
+                {
+                    customers.Add(customer);
+                }
+            }
+            return customers;
+        }
+
         public async Task<Customer> GetCustomerById(string id)
         {
             var sqlQueryText = "SELECT * FROM c WHERE c.id = '" + id + "'";
@@ -58,7 +79,6 @@ namespace customer_api.Services
                 foreach (Customer customer in currentResultSet)
                 {
                     customers.Add(customer);
-                    Console.WriteLine("\tRead {0}\n", customer);
                 }
             }
             return customers.FirstOrDefault();
@@ -70,6 +90,41 @@ namespace customer_api.Services
             {
                 ItemResponse<Customer> RemoveCustomerResponse = await this.container.DeleteItemAsync<Customer>(customerId, new PartitionKey(firstName));
                 return "Successfully Removed";
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+        public async Task<string> UpdateCustomer(string id, Customer customer)
+        {
+            try
+            {
+                var response = await GetCustomerById(id);
+
+                ItemResponse<Customer> wakefieldFamilyResponse = await this.container.ReadItemAsync<Customer>(id, new PartitionKey(response.FirstName));
+                var itemBody = wakefieldFamilyResponse.Resource;
+
+                if(customer.FirstName != null)
+                {
+                    return "Cannot Update First Name";
+                }
+                if(customer.LastName != null)
+                {
+                    itemBody.LastName = customer.LastName;
+                }
+                if(customer.BirthdayInEpoch != null)
+                {
+                    itemBody.BirthdayInEpoch = customer.BirthdayInEpoch;
+                }
+                if(customer.Email != null)
+                {
+                    itemBody.Email = customer.Email;
+                }
+
+                wakefieldFamilyResponse = await this.container.ReplaceItemAsync<Customer>(itemBody, itemBody.Id, new PartitionKey(itemBody.FirstName));
+
+                return "Successfully updated";
             }
             catch (Exception ex)
             {
