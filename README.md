@@ -33,7 +33,6 @@ by Jomiel Enriquez
 
 ![](./svg/POST_UpdateCustomer.svg)
 
-### Query Params
  - ### Query Params
     | Key | Value |
     | ------------- | ------------- |
