@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "customer_trigger": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7184",
+      "launchBrowser": false
+    }
+  }
+}
