@@ -12,7 +12,7 @@ by Jomiel Enriquez
 Delete specific customer information using the customer id.
 
 ### Query Params
-<table style="width:500px; border-top:solid 1px">
+<table style="width:500px; border-top:solid 1px;">
     <tr>
         <td style="text-align:center"><h5>id</h5></td>
         <td style="text-align:center"><h5> <_CustomerId_> </h5></td>
