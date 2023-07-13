@@ -10,26 +10,23 @@ by Jomiel Enriquez
 
 
 ![](./svg/POST_CreateCustomer.svg)
-### Body raw (text)
-```json
-{
-    "firstname":"Rachell",
-    "lastname":"Cordero",
-    "birthdayinepoch":"01/01/2022",
-    "email":"test@mail.com"
-}
-```
+ - ### Body raw (text)
+    ```json
+    {
+        "firstname":"Jomiel",
+        "lastname":"Enriquez",
+        "birthdayinepoch":"01/01/2022",
+        "email":"test@mail.com"
+    }
+    ```
 
 
 
 ![](./svg/GET_GetCustomerById.svg)
-### Query Params
-<table style="width:500px; border-top:solid 1px">
-    <tr>
-        <td style="text-align:center"><h5>id</h5></td>
-        <td style="text-align:center"><h5> <_CustomerId_> </h5></td>
-    </tr>
-</table>
+ - ### Query Params
+    | Key | Value |
+    | ------------- | ------------- |
+    | id  | {CustomerId}  |
 
 
 ![](./svg/GET_GetAllCustomers.svg)
@@ -37,19 +34,16 @@ by Jomiel Enriquez
 ![](./svg/POST_UpdateCustomer.svg)
 
 ### Query Params
-<table style="width:500px; border-top:solid 1px">
-    <tr>
-        <td style="text-align:center"><h5>id</h5></td>
-        <td style="text-align:center"><h5> <_CustomerId_> </h5></td>
-    </tr>
-</table>
+ - ### Query Params
+    | Key | Value |
+    | ------------- | ------------- |
+    | id  | {CustomerId}  |
 
-### Body raw (text)
-```json
-{
-    "firstname":"Rachell",
-    "lastname":"Cordero",
-    "birthdayinepoch":"01/01/2022",
-    "email":"test@mail.com"
-}
-```
+ - ### Body raw (text)
+    ```json
+    {
+        "lastname":"Enriquez",
+        "birthdayinepoch":"01/01/2022",
+        "email":"test@mail.com"
+    }
+    ```
