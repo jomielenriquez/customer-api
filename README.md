@@ -2,18 +2,11 @@
 by Jomiel Enriquez
 
 ![](./svg/DELETE_CustomerById.svg)
-### Query Params
-<table style="width:500px; border-top:solid 1px;">
-    <tr>
-        <td style="text-align:center"><h5>id</h5></td>
-        <td style="text-align:center"><h5> <_CustomerId_> </h5></td>
-    </tr>
-</table>
 
-| Key | Value |
-| ------------- | ------------- |
-| id  | {CustomerId}  |
-
+ - ### Query Params
+    | Key | Value |
+    | ------------- | ------------- |
+    | id  | {CustomerId}  |
 
 
 ![](./svg/POST_CreateCustomer.svg)
