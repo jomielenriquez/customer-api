@@ -3,7 +3,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
         <!-- Other embed HTML element/text into SVG -->
         <div style="border: solid 3px #f93e3e;border-radius: 5px; height: 55px; padding:10px !important;margin-bottom: 10px;background-color: #fbe7e7;">
-            <div style="background-color: #f93e3e; color:white;font-size: 20px !important; border-radius: 5px; display: inline-block; width: 80px; text-align: center; height: 40px; padding-top: 15px;font-family: Arial, Helvetica, sans-serif;font-weight:600">DELETE</div>
+            <div style="background-color: #f93e3e; color:white;font-size: 20px !important; border-radius: 5px; display: inline-block; width: 100px; text-align: center; height: 40px; padding-top: 15px;font-family: Arial, Helvetica, sans-serif;font-weight:600">DELETE</div>
             <div
                 style="
                     display: inline-block;
