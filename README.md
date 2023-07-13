@@ -3,7 +3,7 @@ by Jomiel Enriquez
    - Email: enriquez.jliquigan
    - Contact Number: 09963637231
 
-## <span style="color: #f79a8e !important"> DELETE </span> Remove CustomerById
+<h1> <span style="color: #f79a8e !important"> DELETE </span> Remove CustomerById</h1>
 
 ```url
 /api/RemoveCustomerById?id=<CustomerId>
