@@ -10,16 +10,7 @@ by Jomiel Enriquez
     </tr>
 </table>
 
-
-
-## <span style="color: #f79a8e !important"> POST </span> Create
-
-```url
-/api/CreateCustomer
-```
-
-Create new customer info.
-
+![](./svg/POST_CreateCustomer.svg)
 ### Body raw (text)
 ```json
 {
