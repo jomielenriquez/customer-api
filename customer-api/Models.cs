@@ -9,8 +9,7 @@ namespace customer_api.Models
     {
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
-        [JsonProperty(PropertyName = "customerid")]
-        public string PartitionKey { get; set; }
+        [JsonProperty(PropertyName = "firstname")]
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string BirthdayInEpoch { get; set; }

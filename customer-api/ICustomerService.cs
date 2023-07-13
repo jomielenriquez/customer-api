@@ -12,14 +12,14 @@ namespace customer_api
         /// Get all customer info
         /// </summary>
         /// <returns></returns>
-        //Task<string> InsertCustomer(Customer customer);
+        //Task<string> GetAllCustomer(Customer customer);
 
-        ///// <summary>
-        ///// Get a book by its id from the Books collection
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <returns></returns>
-        //Task<Customer> GetBook(string id);
+        /// <summary>
+        /// Get a book by its id from the Books collection
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<Customer> GetCustomerById(string id);
 
         ///// <summary>
         ///// Insert a book into the Books collection
@@ -43,11 +43,11 @@ namespace customer_api
         ///// <returns></returns>
         //Task RemoveBook(Book bookIn);
 
-        ///// <summary>
-        ///// Removes a book with the specified id from the Books collection
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <returns></returns>
-        //Task RemoveBookById(string id);
+        /// <summary>
+        /// Removes a book with the specified id from the Books collection
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<string> RemoveCustomerById(string id, string firstName);
     }
 }

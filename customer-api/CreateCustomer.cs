@@ -11,6 +11,9 @@ using customer_api.Models;
 using Microsoft.Azure.Cosmos;
 using Container = Microsoft.Azure.Cosmos.Container;
 using Microsoft.Extensions.Configuration;
+using MongoDB.Bson;
+using ServiceStack;
+using ServiceStack.Text;
 
 namespace customer_api
 {
@@ -25,20 +28,28 @@ namespace customer_api
             _customerService = customerService;
         }
 
-        [FunctionName("CreateCustomer")]
+        [FunctionName(nameof(CreateCustomer))]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "Customer")] HttpRequest req)
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "CreateCustomer")] HttpRequest req)
         {
-            //_logger.LogInformation("C# HTTP trigger function processed a request.");
-            string name = req.Query["name"];
+            var incomingRequest = await new StreamReader(req.Body).ReadToEndAsync();
+            var bookRequest = JsonConvert.DeserializeObject<Customer>(incomingRequest);
+
+            DateTime enteredDate = DateTime.Parse(bookRequest.BirthdayInEpoch);
+
+            DateTimeOffset dateTimeOffset = new DateTimeOffset(enteredDate);
+            long epochTimestamp = dateTimeOffset.ToUnixTimeSeconds();
+
+            //DateTimeOffset dateTimeOffset1 = DateTimeOffset.FromUnixTimeSeconds(epochTimestamp);
+            //DateTime dateTime = dateTimeOffset1.LocalDateTime;
+
             Customer customer = new Customer
             {
-                Id = req.Query["firstname"] + req.Query["id"],
-                PartitionKey = req.Query["id"],
-                FirstName = req.Query["firstname"],
-                LastName = req.Query["lastname"],
-                BirthdayInEpoch = req.Query["birthday"],
-                Email = req.Query["email"]
+                Id = ObjectId.GenerateNewId().ToString(),
+                FirstName = bookRequest.FirstName,
+                LastName = bookRequest.LastName,
+                BirthdayInEpoch = epochTimestamp.ToString(),
+                Email = bookRequest.Email,
             };
 
             string response = await _customerService.CreateCustomer(customer);
