@@ -38,6 +38,10 @@ Create new customer info.
 ```
 ![](./svg/test.svg)
 
+<div style="width: 100%;">
+  <img src="./svg/test.svg" style="width: 100%;" alt="Click to see the source">
+</div>
+
 ### Query Params
 <table style="width:500px; border-top:solid 1px">
     <tr>
