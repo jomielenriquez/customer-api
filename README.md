@@ -37,7 +37,6 @@ Create new customer info.
 }
 ```
 ![](./svg/test.svg)
-
 ### Query Params
 <table style="width:500px; border-top:solid 1px">
     <tr>
