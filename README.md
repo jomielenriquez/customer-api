@@ -35,24 +35,9 @@ by Jomiel Enriquez
 </table>
 
 
+![](./svg/GET_GetAllCustomers.svg)
 
-## <span style="color: #f79a8e !important"> GET </span> GetAllCustomers
-
-```url
-/api/GetAllCustomers
-```
-
-Get all customer information.
-
-
-
-## <span style="color: #f79a8e !important"> POST </span> UpdateCustomer
-
-```url
-/api/UpdateCustomer?id=<CustomerId>
-```
-
-Get specific customer information.
+![](./svg/POST_UpdateCustomer.svg)
 
 ### Query Params
 <table style="width:500px; border-top:solid 1px">
