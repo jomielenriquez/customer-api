@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "customer-trigger", "customer-trigger\customer-trigger.csproj", "{607CAD20-5999-44EA-A492-4167EABA091F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustosDBTrigger", "CustosDBTrigger\CustosDBTrigger.csproj", "{1DCEFC00-C299-45E3-9D30-2B4D68DEA7B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{607CAD20-5999-44EA-A492-4167EABA091F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{607CAD20-5999-44EA-A492-4167EABA091F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{607CAD20-5999-44EA-A492-4167EABA091F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{607CAD20-5999-44EA-A492-4167EABA091F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DCEFC00-C299-45E3-9D30-2B4D68DEA7B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DCEFC00-C299-45E3-9D30-2B4D68DEA7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DCEFC00-C299-45E3-9D30-2B4D68DEA7B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DCEFC00-C299-45E3-9D30-2B4D68DEA7B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D9752821-84C1-449D-AFDD-8870C56A681F}
+		SolutionGuid = {DC2B0163-CD4D-4859-8641-F4147E7B1680}
 	EndGlobalSection
 EndGlobal
