@@ -10,6 +10,8 @@ by Jomiel Enriquez
     </tr>
 </table>
 
+
+
 ![](./svg/POST_CreateCustomer.svg)
 ### Body raw (text)
 ```json
@@ -20,6 +22,9 @@ by Jomiel Enriquez
     "email":"test@mail.com"
 }
 ```
+
+
+
 ![](./svg/GET_GetCustomerById.svg)
 ### Query Params
 <table style="width:500px; border-top:solid 1px">
