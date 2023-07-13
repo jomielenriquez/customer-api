@@ -1,7 +1,6 @@
 # Customer Information API - Backend Challenge
 by Jomiel Enriquez
 
-
 ![](./svg/DELETE_CustomerById.svg)
 ### Query Params
 <table style="width:500px; border-top:solid 1px;">
@@ -10,6 +9,10 @@ by Jomiel Enriquez
         <td style="text-align:center"><h5> <_CustomerId_> </h5></td>
     </tr>
 </table>
+
+| Key | Value |
+| ------------- | ------------- |
+| id  | {CustomerId}  |
 
 
 
