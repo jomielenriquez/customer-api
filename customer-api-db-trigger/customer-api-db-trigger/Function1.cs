@@ -5,7 +5,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 
-namespace CustosDBTrigger
+namespace customer_api_db_trigger
 {
     public static class Function1
     {
@@ -13,7 +13,7 @@ namespace CustosDBTrigger
         public static void Run([CosmosDBTrigger(
             databaseName: "customerdb",
             collectionName: "customer",
-            ConnectionStringSetting = "cosmosdbconnectionstring",
+            ConnectionStringSetting = "cusmosdbtriggerconnectionstring",
             LeaseCollectionName = "leases")]IReadOnlyList<Document> input,
             ILogger log)
         {

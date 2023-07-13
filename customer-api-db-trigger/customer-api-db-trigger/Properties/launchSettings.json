@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "CustosDBTrigger": {
+    "customer_api_db_trigger": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7256",
+      "commandLineArgs": "--port 7168",
       "launchBrowser": false
     }
   }
